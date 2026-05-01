@@ -50,6 +50,8 @@ const fetchEmployees = async () => {
 
 
 
+
+
   const handleCheckIn = async (e) => {
     e.preventDefault();
     if (!employee_id) {

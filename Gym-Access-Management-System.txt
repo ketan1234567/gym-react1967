@@ -1,0 +1,100 @@
+2. ADMINS TABLE
+
+CREATE TABLE admins (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  email VARCHAR(150) UNIQUE,
+  password VARCHAR(255),
+  role ENUM('admin', 'manager') DEFAULT 'manager',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+3. EMPLOYEES TABLE
+
+CREATE TABLE employees (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  employee_id VARCHAR(50) UNIQUE,
+  name VARCHAR(100),
+  department VARCHAR(100),
+  status VARCHAR(50),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+4. LOCATIONS TABLE
+
+CREATE TABLE locations (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100)
+);
+
+5. ATTENDANCE LOGS TABLE
+
+CREATE TABLE attendance_logs (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  employee_id VARCHAR(50),
+  location_id INT,
+  check_in_time DATETIME,
+  check_out_time DATETIME,
+  duration INT,
+  date DATE,
+  FOREIGN KEY (employee_id) REFERENCES employees(employee_id),
+  FOREIGN KEY (location_id) REFERENCES locations(id)
+);
+
+
+UPLOADS TABLE
+
+
+
+employee_id
+name
+department
+status
+CREATE TABLE uploads (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  file_name VARCHAR(255),
+  uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+AUDIT LOGS TABLE
+
+CREATE TABLE audit_logs (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  action VARCHAR(100),
+  user_id INT,
+  description TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+
+Role-Based UI (Important)
+
+👨‍💼 Manager Login
+
+✔ Check-in form
+✔ Search employee
+✔ Active users list
+✔ Check-out button
+✔ Live capacity
+
+
+👩‍💼 Admin Login
+
+👉 Show:
+
+
+✔ Upload Excel
+✔ Reports
+✔ Dashboard
+✔ Monitor system
+
+
+stats → numbers (totalEmployees, active, etc)
+recentCheckIns → recent logs
+locationStats → location counts
+activeSessions → current users in gym
+

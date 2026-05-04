@@ -22,7 +22,16 @@ export default function CheckInPage() {
   const [statsLoading, setStatsLoading] = useState(true);
   const { toast } = useToast();
 
+  const stored = JSON.parse(localStorage.getItem('gym-auth'));
+const userLocation = stored?.user?.location;
+//const location_id = stored.user.id;
+
   useEffect(() => {
+    const stored = JSON.parse(localStorage.getItem('gym-auth') || "{}");
+    if (stored?.user?.id) {
+        setLocation(stored.user.id);
+    }
+    
     fetchStats();
     fetchEmployees();
   }, []);
@@ -258,20 +267,18 @@ const fetchEmployees = async () => {
 
 
 {activeTab === 'checkin' && (
-  <div className="space-y-2">
-    <Label className="text-slate-700 font-medium">Location</Label>
 
-    <select
-      className="w-full border p-2 rounded"
-      value={location_id}
-      onChange={(e) => setLocation(e.target.value)}
-    >
-      <option value="">Select Location</option>
-      <option value="1">Kalyani Nagar</option>
-      <option value="2">Kharadi</option>
-      <option value="3">Magarpatta</option>
-    </select>
-  </div>
+  
+  <div className="space-y-2">
+  <Label>Location</Label>
+  <input
+    type="text"
+    value={userLocation}
+    disabled
+    className="w-full border p-2 rounded bg-gray-100"
+  />
+</div>
+  
 )}
 
             {activeTab === 'checkout' && (

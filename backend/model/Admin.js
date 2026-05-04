@@ -5,7 +5,9 @@ const Admin = sequelize.define("Admin", {
   name: DataTypes.STRING,
   email: { type: DataTypes.STRING, unique: true },
   password: DataTypes.STRING,
-  role: DataTypes.STRING
+  role: DataTypes.STRING,
+  location:DataTypes.STRING
+
 },{
   timestamps: false   // ✅ ADD THIS
 });

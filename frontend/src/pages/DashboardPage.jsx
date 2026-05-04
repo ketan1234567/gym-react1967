@@ -68,7 +68,7 @@ export default function DashboardPage() {
       {/* Stat Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <Card className="border-slate-200/60">
-          <CardContent className="p-5">
+          <CardContent className="p-5 pt-5">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-slate-500">Total Employees</p>
@@ -82,7 +82,7 @@ export default function DashboardPage() {
         </Card>
 
         <Card className="border-slate-200/60">
-          <CardContent className="p-5">
+          <CardContent className="p-5 pt-5">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-slate-500">Today&apos;s Check-ins</p>
@@ -96,7 +96,7 @@ export default function DashboardPage() {
         </Card>
 
         <Card className="border-slate-200/60">
-          <CardContent className="p-5">
+          <CardContent className="p-5 pt-5">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-slate-500">Currently Active</p>

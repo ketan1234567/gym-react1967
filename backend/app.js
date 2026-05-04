@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const sequelize = require("./config/db");
 
+require("./model"); 
 app.use(express.json());
 app.use(cors());          // ✅ correct
  

@@ -7,7 +7,7 @@ import { useAuth } from '../../context/AuthContext';
 import { useToast } from '../../components/ui/sonner';
 
 const navItems = [
-  { id: 'dashboard', label: 'Dashboard', path: '/', icon: LayoutDashboard, roles: ['ADMIN'] },
+  { id: 'dashboard', label: 'Dashboard', path: '/', icon: LayoutDashboard, roles: ['ADMIN','MANAGER'] },
 
   { id: 'checkin', label: 'Check-In / Out', path: '/checkin', icon: LogIn, roles: ['ADMIN', 'MANAGER'] },
 

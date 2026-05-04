@@ -25,7 +25,7 @@ console.log(req.body,"");
 
     // 3. Create token
     const token = jwt.sign(
-      { id: user.id, role: user.role },
+      { id: user.id, role: user.role,location: user.location },
       "secretkey",
       { expiresIn: "1h" }
     );
@@ -37,7 +37,8 @@ console.log(req.body,"");
       user: {
         id: user.id,
         email: user.email,
-        role: user.role
+        role: user.role,
+        location: user.location
       }
     });
 

@@ -395,6 +395,8 @@ const filteredEmployees = employees.filter(emp => {
                 <div className="flex items-center gap-2">
                   <Users className={`w-4 h-4 ${activeTab === 'checkin' ? 'text-emerald-600' : 'text-red-600'}`} />
                   <div>
+
+                    
                     <span className={`text-sm font-medium ${activeTab === 'checkin' ? 'text-emerald-700' : 'text-red-700'}`}>
                       {selectedEmployeeName}
                     </span>
